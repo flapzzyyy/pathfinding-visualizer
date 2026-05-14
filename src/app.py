@@ -1,9 +1,15 @@
 import time
 from flask import Flask, render_template_string, request, jsonify
 
-from algorithm import Pathfinder
-from map import MapManager
-from ui import get_html
+# Local
+# from algorithm import Pathfinder
+# from map import MapManager
+# from ui import get_html
+
+# Deploy
+from src.algorithm import Pathfinder
+from src.map import MapManager
+from src.ui import get_html
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024
@@ -67,7 +73,8 @@ def solve():
         'end': list(end),
     })
 
-if __name__ == '__main__':
-    print("Pathfinding Visualizer")
-    print("Local: http://localhost:5000")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+# Local
+# if __name__ == '__main__':
+#     print("Pathfinding Visualizer")
+#     print("Local: http://localhost:5000")
+#     app.run(debug=True, host='0.0.0.0', port=5000)
